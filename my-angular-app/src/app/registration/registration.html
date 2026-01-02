@@ -1,0 +1,142 @@
+<div class="w3-display-container"
+  style="background-image:url('https://t4.ftcdn.net/jpg/02/16/47/33/360_F_216473351_FCLq1pZQOBFrgcyPBphKvBd8Z5wjD1dI.jpg');
+         background-size:cover;
+         background-position:center;
+         height:100vh;">
+
+  <div class="w3-display-middle w3-card w3-white w3-padding"
+       style="width:90%; max-width:900px;">
+
+    <h2 class="w3-center w3-text-blue">Registration</h2>
+
+    <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+      <h5 class="w3-text-blue">Personal Details :</h5>
+
+      <div class="w3-row">
+        <div class="w3-col m6 w3-padding-small">
+          <label>First Name</label>
+          <input class="w3-input w3-border" formControlName="firstname">
+          <small class="w3-text-red"
+   *ngIf="registrationForm.get('firstname')?.invalid &&
+          registrationForm.get('firstname')?.touched">Enter valid firstname</small>
+        </div>
+
+        <div class="w3-col m6 w3-padding-small">
+          <label>Last Name</label>
+          <input class="w3-input w3-border" formControlName="lastname">
+          <small class="w3-text-red"
+   *ngIf="registrationForm.get('lastname')?.invalid &&
+          registrationForm.get('lastname')?.touched">Enter valid lastname</small>
+        </div>
+      </div>
+
+
+      <div class="w3-row">
+        <div class="w3-col m6 w3-padding-small">
+          <label>Email</label>
+          <input class="w3-input w3-border" type="email" formControlName="email">
+          <small class="w3-text-red"
+   *ngIf="registrationForm.get('email')?.invalid &&
+          registrationForm.get('email')?.touched">Enter valid Email</small>
+        </div>
+
+        <div class="w3-col m3 w3-padding-small">
+          <label>Phone</label>
+          <input class="w3-input w3-border" formControlName="phone">
+          <small class="w3-text-red"
+   *ngIf="registrationForm.get('phone')?.invalid &&
+          registrationForm.get('phone')?.touched">Enter valid Phone No</small>
+          
+        </div>
+
+        <div class="w3-col m3 w3-padding-small">
+          <label>Date of Birth</label>
+          <input class="w3-input w3-border" type="date" formControlName="birthDate">
+          <small class="w3-text-red"
+   *ngIf="registrationForm.get('birthDate')?.invalid &&
+          registrationForm.get('birthDate')?.touched">Enter valid Date Of Birth</small>
+        </div>
+      </div>
+
+      <div class="w3-row">
+        <div class="w3-col m12 w3-padding-small">
+          <label>Website</label>
+          <input class="w3-input w3-border" formControlName="website">
+          <small class="w3-text-red"
+   *ngIf="registrationForm.get('website')?.invalid &&
+          registrationForm.get('website')?.touched">Enter valid Website</small>
+        </div>
+      </div>
+      <h5 class="w3-text-blue">Address :</h5>
+
+      <div class="w3-row" formGroupName="address">
+        <div class="w3-col m6 w3-padding-small">
+          <label>Street</label>
+          <input class="w3-input w3-border" formControlName="street">
+          <small class="w3-text-red"
+   *ngIf="registrationForm.get('street')?.invalid &&
+          registrationForm.get('street')?.touched">Enter valid Street</small>
+        </div>
+
+        <div class="w3-col m6 w3-padding-small">
+          <label>Suite</label>
+          <input class="w3-input w3-border" formControlName="suite">
+          <small class="w3-text-red"
+   *ngIf="registrationForm.get('suite')?.invalid &&
+          registrationForm.get('suite')?.touched">Enter valid Suite</small>
+        </div>
+
+        <div class="w3-col m6 w3-padding-small">
+          <label>City</label>
+          <input class="w3-input w3-border" formControlName="city">
+          <small class="w3-text-red"
+   *ngIf="registrationForm.get('city')?.invalid &&
+          registrationForm.get('city')?.touched">Enter valid City</small>
+        </div>
+
+        <div class="w3-col m6 w3-padding-small">
+          <label>Zipcode</label>
+          <input class="w3-input w3-border" formControlName="zipcode">
+          <small class="w3-text-red"
+   *ngIf="registrationForm.get('zipcode')?.invalid &&
+          registrationForm.get('zipcode')?.touched">Enter valid Zipcode</small>
+        </div>
+      </div>
+      <h5 class="w3-text-blue">Company Details :</h5>
+
+      <div class="w3-row" formGroupName="company">
+        <div class="w3-col m4 w3-padding-small">
+          <label>Company Name</label>
+          <input class="w3-input w3-border" formControlName="name">
+          <small class="w3-text-red"
+   *ngIf="registrationForm.get('name')?.invalid &&
+          registrationForm.get('name')?.touched">Enter valid Company Name</small>
+        </div>
+
+        <div class="w3-col m4 w3-padding-small">
+          <label>Catch Phrase</label>
+          <input class="w3-input w3-border" formControlName="catchPhrase">
+          <small class="w3-text-red"
+   *ngIf="registrationForm.get('catchPhrase')?.invalid &&
+          registrationForm.get('catchPhrase')?.touched">Enter valid Catch Phrase</small>
+        </div>
+
+        <div class="w3-col m4 w3-padding-small">
+          <label>Business</label>
+          <input class="w3-input w3-border" formControlName="bs">
+          <small class="w3-text-red"
+   *ngIf="registrationForm.get('bs')?.invalid &&
+          registrationForm.get('bs')?.touched">Enter valid Business</small>
+        </div>
+      </div>
+      <div class="w3-padding-small">
+        <button class="w3-button w3-blue w3-block w3-round"
+                type="submit"
+                [disabled]="registrationForm.invalid">
+          Register
+        </button>
+      </div>
+
+    </form>
+  </div>
+</div>
